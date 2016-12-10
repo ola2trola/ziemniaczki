@@ -1,0 +1,28 @@
+\include{settings}
+
+%tutaj zaczyna siê w³aœciwa treœæ dokumentu
+\begin{document}
+%\bibliographystyle{plabbrv} %tylko gdy u¿ywamy BibTeXa, ustawia polski styl bibliografii
+
+\maketitle %polecenie generuj¹ce stronê tytu³ow¹
+
+\tableofcontents %spis treœci
+
+\chapter{Streszczenie}
+
+\chapter{Lorem ipsum}
+Lorem ipsum dolor sit am
+
+\chapter{Wstêp}
+\section{Cel projektu}
+
+\chapter{Podsumowanie}
+
+
+\addcontentsline{toc}{chapter}{Bibliografia} %utworzenie w spisie treœci pozycji Bibliografia
+\bibliography{bibliografia} % wstawia bibliografiê korzystaj¹c z pliku bibliografia.bib - dotyczy BibTeXa, je¿eli nie korzystamy z BibTeXa nale¿y u¿yæ otoczenia thebibliography
+
+%opcjonalnie mo¿e siê tu pojawiæ spis rysunków i tabel
+% \listoffigures
+% \listoftables
+\end{document}

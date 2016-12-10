@@ -1,0 +1,47 @@
+\documentclass[eng,printmode]{mgr}
+%opcje klasy dokumentu mgr.cls zosta³y opisane w do³¹czonej instrukcji
+
+%poni¿ej deklaracje u¿ycia pakietów, usun¹æ to co jest niepotrzebne
+%\usepackage[MeX]{polski}
+%\usepackage[cp1250]{inputenc}
+%\usepackage{polski} %przydatne podczas sk³adania dokumentów w j. polskim
+\usepackage[polish]{babel}%alternatywnie do pakietu polski, wybraæ jeden z nich
+\usepackage[cp1250]{inputenc} %kodowanie znaków, zale¿ne od systemu
+\usepackage[T1]{fontenc} %poprawne sk³adanie polskich czcionek
+
+%pakiety do grafiki
+%\usepackage{graphicx}
+\usepackage{subfigure}
+%\usepackage{psfrag}
+\usepackage[pdftex]{graphicx}
+%pakiety dodaj¹ce du¿o dodatkowych poleceñ matematycznych
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{hyperref}
+\usepackage{float}
+
+%pakiety wspomagaj¹ce i poprawiaj¹ce sk³adanie tabel
+\usepackage{supertabular}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{hhline}
+
+%pakiet wypisuj¹cy na marginesie etykiety równañ i rysunków zdefiniowanych przez \label{}, chc¹c wygenerowaæ finaln¹ wersjê dokumentu wystarczy usun¹æ poni¿sz¹ liniê
+%\usepackage{showlabels}
+
+%definicje w³asnych poleceñ
+\newcommand{\R}{I\!\!R} %symbol liczb rzeczywistych, dzia³a tylko w trybie matematycznym
+\newtheorem{theorem}{Twierdzenie}[section] %nowe otoczenie do sk³adania twierdzeñ
+
+%\date{2008} %standardowo u do³u strony tytu³owej umieszczany jest bie¿¹cy rok, to polecenie pozwala wstawiæ dowolny rok
+
+
+%\usepackage{subcaption}
+%\usepackage{fancyref}
+
+\title{Wspomaganie uczenia maszynowego w rozpoznawaniu sekwencji ruchów rejestrowanych przez Kinect}
+\engtitle{Supporting machine learning in recognition of movement sequences recorded by Kinect}
+\author{Aleksandra Stefaniak}
+\supervisor{dr in¿. Urszula Libal} 
+\field{Elektronika (EKA)}
+\specialisation{Zastosowania in¿ynierii komputerowej \\w technice (EZI)}
