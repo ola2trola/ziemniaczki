@@ -27,17 +27,19 @@ Ka¿dy punkt ma okreœlone wspó³rzêdne X, Y i Z, dziêki czemu mo¿liwe jest odczyta
 	\caption{Przedstawienie œledzenia szkieletu}
 \end{figure} 
 
-Obecne oprogamowanie urz¹dzenia Kinekt nie posiada jednak funkcji wyœwietlania zapisanych wektorów po³o¿enia w formie filmów. Interfejs bêdzie mia³ za zadanie przyjêcie danych wejœciowych z konsoli i wyœwietlenie ich w postaci sekwencji obrazów. Korzystanie z programu i jego funkcjonalnoœæ w za³o¿eniu bêd¹ zbli¿one do powszechnie dostêpnych odtwarzaczy filmów. Dok³adna specyfikacja zostanie opisana w kolejnym rozdziale.
+Obecne oprogamowanie urz¹dzenia Kinect nie posiada jednak funkcji wyœwietlania zapisanych wektorów po³o¿enia w formie filmów. Interfejs bêdzie mia³ za zadanie przyjêcie danych wejœciowych z konsoli i wyœwietlenie ich w postaci sekwencji obrazów. Korzystanie z programu i jego funkcjonalnoœæ w za³o¿eniu bêd¹ zbli¿one do powszechnie dostêpnych odtwarzaczy filmów. Dok³adna specyfikacja zostanie opisana w kolejnym rozdziale.
+
 \section{Znaczenie podjêtej problematyki}
-W zamyœle praca in¿ynierska mia³a byæ pomoc¹ dla pracy doktorskiej zajmuj¹cej siê m.in. zdalnym monitorowaniem dzieci dotkniêtych autyzmem. Dzieci te wymagaj¹ sta³ej kontroli opiekuna ze wzglêdu na specyficzne, powtarzalne zachowania, które mog¹ byæ agresywne i autodestrukcyjne. Do takich zachowañ nale¿¹ miêdzy innymi codzienne, wielogodzinne prasowanie ubrañ, uderzanie g³ow¹ w twarde przedmioty, czy gryzie przedramion. Wspomniana praca dziêki œledzeniu ruchów i wykrywaniu wzorców ruchowych za pomoc¹ urz¹dzenia Kinect pozwoli na pozostawienie dziecka bez nadzoru bezpoœredniego oraz zaalarmuje opiekuna w przypadku wyst¹pienia niebezpiecznej aktywnoœci.
-\newline Z powodu braku odpowiedniego interfejsu, który umo¿liwia³by wyœwietlanie sekwencji ruchów, co z kolei jest istotnym element omawianej pracy doktorskiej, mój projekt in¿ynierski móg³by wype³niæ tê lukê w funkcjonalnoœci i u³atwiæ korzystanie z urz¹dzenia Kintect.
+W zamyœle praca in¿ynierska mia³a byæ pomoc¹ dla pracy doktorskiej zajmuj¹cej siê m.in. zdalnym monitorowaniem dzieci dotkniêtych autyzmem. Dzieci te wymagaj¹ sta³ej kontroli opiekuna ze wzglêdu na specyficzne, powtarzalne zachowania, które mog¹ byæ agresywne i autodestrukcyjne. Do takich zachowañ nale¿¹ miêdzy innymi codzienne, wielogodzinne prasowanie ubrañ, uderzanie g³ow¹ w twarde przedmioty, czy gryzienie przedramion. Wspomniana praca dziêki œledzeniu ruchów i wykrywaniu wzorców ruchowych za pomoc¹ urz¹dzenia Kinect pozwoli na pozostawienie dziecka bez nadzoru bezpoœredniego oraz zaalarmuje opiekuna w przypadku wyst¹pienia niebezpiecznej aktywnoœci.
+
+Z powodu braku odpowiedniego interfejsu, który umo¿liwia³by wyœwietlanie sekwencji ruchów, co z kolei jest istotnym elementem omawianej pracy doktorskiej, mój projekt in¿ynierski móg³by wype³niæ tê lukê w funkcjonalnoœci i u³atwiæ korzystanie z urz¹dzenia Kintect.
 
 \section{Ogólna koncepcja rozwi¹zania problemu i Ÿród³a danych wejœciowych}
 ród³em danych wejœciowych, jak ju¿ wczeœniej zosta³o wspomniane, s¹ wektory przedstawiaj¹ce po³o¿enie punktów sczytanych z cia³a cz³owieka w przestrzeni. Wektory s¹ zapisywane w formie plików tekstowych, gdzie ka¿dy wiersz reprezentuje jeden odczyt czujników Kinect'a. Wszystkie punkty s¹ opisane trzema wspó³rzêdnymi X, Y i Z oraz cyfr¹ z zakresu 0 - 2 okreœlaj¹c¹ stan odczytania danego punktu. Przyk³ad pojedynczego zapisu zamieszczono w tabeli 2.1.
 
 TU BÊDZIE TABELA ALE MUSZÊ POSZUKAÆ KODU
 
-Program zostanie napisany w œrodowisku Microsoft Visual Studio w jêzyku C++, z wykorzystaniem narzêdzi dostarczanych przez Kinekt SDK.
+Program zostanie napisany w œrodowisku Microsoft Visual Studio w jêzyku C++ 11, z wykorzystaniem narzêdzi dostarczanych przez Kinect SDK.
 \section{Sprecyzowanie stosowanych pojêæ}
 \begin{itemize}
 \item Interfejs -- blablabla
@@ -52,10 +54,11 @@ Do spe³nienia za³o¿eñ projektu, interfejs powinien mieæ funkcje:\
 \item wczytania pliku tekstowego,
 \item przekonwertowania danych wejœciowych na odpowiednie wspó³rzêdne,
 \item narysowania szkieletu,
-\item odtwarzania sekwencji ruchów.
+\item odtwarzania sekwencji ruchów,
+\item typowe dla odtwarzaczy filmów zatrzymania, pauzy, przewijania w przód i w ty³.
 \end{itemize}
 \section{Analiza wymagañ dotycz¹cych interfejsu}
-Ze wzglêdu na brak przetwarzania sygna³ów dŸwiêkowych, interfejs nie bêdzie potrzebowa³ funkcji.
+Ze wzglêdu na brak przetwarzania sygna³ów dŸwiêkowych, interfejs nie bêdzie potrzebowa³ funkcji do obs³ugi dŸwiêków. 
 Co jest w innych interfejsach, a tu jest nadmiarowe; co siê nie zmieœci lub jest niepotrzebne
 \section{Projekt wykonania interfejsu}
 tekst
