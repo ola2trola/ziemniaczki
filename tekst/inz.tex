@@ -19,7 +19,7 @@ Celem pracy in¿ynierskiej jest zaprojektowanie i implementacja interfejsu do kon
 	\caption{Schemat punktów do odczytu pozycji cz³owieka}
 \end{figure} 
 
-Ka¿dy punkt ma okreœlone wspó³rzêdne X, Y i Z, dziêki czemu mo¿liwe jest odczytanie po³o¿enia osoby w przestrzeni i pozycji, w jakiej siê znajduje. Ka¿dy wektor mo¿e byæ wyœwietlony w postaci schematycznego szkieletu (rys. 2.2).
+Ka¿dy punkt ma okreœlone wspó³rzêdne X, Y i Z, dziêki czemu mo¿liwe jest odczytanie po³o¿enia osoby w przestrzeni i pozycji, w jakiej siê znajduje. Zapisane dane mo¿na wyœwietliæ w postaci schematycznego szkieletu (rys. 2.2).
 
 \begin{figure}[!h]
 	\centering
@@ -27,24 +27,58 @@ Ka¿dy punkt ma okreœlone wspó³rzêdne X, Y i Z, dziêki czemu mo¿liwe jest odczyta
 	\caption{Przedstawienie œledzenia szkieletu}
 \end{figure} 
 
-Obecne oprogamowanie urz¹dzenia Kinect nie posiada jednak funkcji wyœwietlania zapisanych wektorów po³o¿enia w formie filmów. Interfejs bêdzie mia³ za zadanie przyjêcie danych wejœciowych z konsoli i wyœwietlenie ich w postaci sekwencji obrazów. Korzystanie z programu i jego funkcjonalnoœæ w za³o¿eniu bêd¹ zbli¿one do powszechnie dostêpnych odtwarzaczy filmów. Dok³adna specyfikacja zostanie opisana w kolejnym rozdziale.
+Obecne oprogamowanie urz¹dzenia Kinect nie posiada jednak funkcji wyœwietlania zapisanych wektorów po³o¿enia w formie filmów. Interfejs bêdzie mia³ za zadanie przyjêcie danych wejœciowych z konsoli i wyœwietlenie ich w postaci sekwencji obrazów przedstawiaj¹cych szkielety. Korzystanie z programu i jego funkcjonalnoœæ w za³o¿eniu bêd¹ zbli¿one do powszechnie dostêpnych odtwarzaczy filmów. Dok³adna specyfikacja zostanie opisana w kolejnym rozdziale.
 
 \section{Znaczenie podjêtej problematyki}
-W zamyœle praca in¿ynierska mia³a byæ pomoc¹ dla pracy doktorskiej zajmuj¹cej siê m.in. zdalnym monitorowaniem dzieci dotkniêtych autyzmem. Dzieci te wymagaj¹ sta³ej kontroli opiekuna ze wzglêdu na specyficzne, powtarzalne zachowania, które mog¹ byæ agresywne i autodestrukcyjne. Do takich zachowañ nale¿¹ miêdzy innymi codzienne, wielogodzinne prasowanie ubrañ, uderzanie g³ow¹ w twarde przedmioty, czy gryzienie przedramion. Wspomniana praca dziêki œledzeniu ruchów i wykrywaniu wzorców ruchowych za pomoc¹ urz¹dzenia Kinect pozwoli na pozostawienie dziecka bez nadzoru bezpoœredniego oraz zaalarmuje opiekuna w przypadku wyst¹pienia niebezpiecznej aktywnoœci.
+W zamyœle praca in¿ynierska mia³a byæ pomoc¹ dla pracy doktorskiej zajmuj¹cej siê m.in. zdalnym monitorowaniem dzieci dotkniêtych autyzmem. Dzieci te wymagaj¹ sta³ej kontroli opiekuna ze wzglêdu na specyficzne, powtarzalne zachowania, które mog¹ byæ agresywne i autodestrukcyjne. Do takich zachowañ nale¿¹ na przyk³ad codzienne, wielogodzinne prasowanie ubrañ; uderzanie g³ow¹ w twarde przedmioty; szczypanie siê, gryzienie przedramion. Wspomniana praca dziêki œledzeniu ruchów i wykrywaniu wzorców ruchowych za pomoc¹ urz¹dzenia Kinect pozwoli na pozostawienie dziecka bez nadzoru bezpoœredniego oraz zaalarmuje opiekuna w przypadku wyst¹pienia niebezpiecznej aktywnoœci.
 
-Z powodu braku odpowiedniego interfejsu, który umo¿liwia³by wyœwietlanie sekwencji ruchów, co z kolei jest istotnym elementem omawianej pracy doktorskiej, mój projekt in¿ynierski móg³by wype³niæ tê lukê w funkcjonalnoœci i u³atwiæ korzystanie z urz¹dzenia Kintect.
+Z powodu braku odpowiedniego interfejsu umo¿liwiaj¹cego wyœwietlanie sekwencji ruchów, co z kolei jest istotnym elementem omawianej pracy doktorskiej, mój projekt in¿ynierski móg³by wype³niæ tê lukê w funkcjonalnoœci i u³atwiæ korzystanie z urz¹dzenia Kintect.
 
 \section{Ogólna koncepcja rozwi¹zania problemu i Ÿród³a danych wejœciowych}
-ród³em danych wejœciowych, jak ju¿ wczeœniej zosta³o wspomniane, s¹ wektory przedstawiaj¹ce po³o¿enie punktów sczytanych z cia³a cz³owieka w przestrzeni. Wektory s¹ zapisywane w formie plików tekstowych, gdzie ka¿dy wiersz reprezentuje jeden odczyt czujników Kinect'a. Wszystkie punkty s¹ opisane trzema wspó³rzêdnymi X, Y i Z oraz cyfr¹ z zakresu 0 - 2 okreœlaj¹c¹ stan odczytania danego punktu. Przyk³ad pojedynczego zapisu zamieszczono w tabeli 2.1.
+ród³em danych wejœciowych s¹ wektory przedstawiaj¹ce po³o¿enie dwudziestu piêciu punktów sczytanych z cia³a cz³owieka w przestrzeni. Wektory s¹ zapisywane w formie plików tekstowych, gdzie ka¿dy wiersz reprezentuje jeden odczyt czujników Kinect'a. Wszystkie punkty s¹ opisane trzema wspó³rzêdnymi X, Y i Z oraz cyfr¹ z zakresu 0 - 2 okreœlaj¹c¹ stan odczytania danego punktu. Ostatnie dwie pozycje okreœlaj¹ stan lewej i prawej d³oni. Przyk³ad pojedynczego zapisu zamieszczono w tabeli 2.1. Podzia³ na rzêdy wprowadzono dla zwiêkszenia czytelnoœci, w rzeczywistoœi jednostkowy pomiar jest jednym wierszem z zapisanymi szeregowo wspó³rzêdnymi.
 
-TU BÊDZIE TABELA ALE MUSZÊ POSZUKAÆ KODU
+\begin{table}[t]
+\caption{Zapis pojedynczej pozycji z Kinect'a}
+\label{wektor-zapis}
+\centering
+\begin{tabular}{|r|r|r|r|c|} \hline
+	  & X & Y & Z & status \\ \hline
+	0 & -0.322994 & 0.078939 & 1.973690 & 2	\\ \hline
+	1 & -0.311638 & 0.394791	 & 1.947818	 & 2	\\ \hline
+	2 & -0.298617 & 0.696857 & 1.909942	 & 2	\\ \hline
+	3 & -0.245858 & 0.830426 & 1.890880	 & 2	\\ \hline
+	4 & -0.413479 & 0.564200 & 1.818703	 & 2	\\ \hline
+	5 & -0.483190 & 0.311920 & 1.805302	 & 2	\\ \hline
+	6 & -0.482859 & 0.074958 & 1.769730	 & 2	\\ \hline
+	7 & -0.481441 & 0.037710 & 1.779700	 & 2	\\ \hline
+	8 & -0.166467 & 0.577118 & 2.004619	 & 2	\\ \hline
+	9 & -0.179343 & 0.294600 & 2.102442	 & 1	\\ \hline
+	10 & -0.147887 & 0.064412 & 2.140178	 & 1	\\ \hline
+	11 & -0.146072 & 0.016404 & 2.146761	 & 1	\\ \hline
+	12 & -0.373768 & 0.074292 & 1.897204	 & 2	\\ \hline
+	13 & -0.428822 & -0.342958 & 1.888521	 & 2	\\ \hline
+	14 & -0.463100 & -0.685706 & 1.938860	 & 2	\\ \hline
+	15 & -0.430420 & -0.726074 & 1.871094	 & 2	\\ \hline
+	16 & -0.260214 & 0.080627 & 1.976252	 & 2	\\ \hline
+	17 & -0.227187 & -0.343283 & 1.964617	 & 2	\\ \hline
+	18 & -0.211956 & -0.701219 & 1.957051	 & 2	\\ \hline
+	19 & -0.139160 & -0.734375 & 1.948242	 & 2	\\ \hline
+	20 & -0.302171 & 0.623259 & 1.921490	 & 2	\\ \hline
+	21 & -0.485022 & -0.018608 & 1.777988	 & 2	\\ \hline
+	22 & -0.440937 & 0.043240 & 1.774300	 & 2	\\ \hline
+	23 & -0.135366 & -0.017109 & 2.142266	 & 2	\\ \hline
+	24 & -0.114269 & 0.024822 & 	2.131000	 & 2	\\ \hline
+	25 & lewa d³oñ &  &  & 1	\\ \hline
+	26 & prawa d³oñ &  &  & 1	\\ \hline
+\end{tabular}
+\end{table}
 
-Program zostanie napisany w œrodowisku Microsoft Visual Studio w jêzyku C++ 11, z wykorzystaniem narzêdzi dostarczanych przez Kinect SDK.
+Program zostanie napisany w œrodowisku Microsoft Visual Studio w jêzyku C++ 11, z wykorzystaniem narzêdzi dostarczanych przez Kinect for Windows SDK.
 \section{Sprecyzowanie stosowanych pojêæ}
 \begin{itemize}
-\item Interfejs -- blablabla
-\item Kinect -- turbobla
-\item CoByTuJeszcze -- wci¹¿ bla
+\item Interfejs -- oprogramowanie do przedstawienia danych wejœciowych, posiadaj¹ce okreœlone funkcjonalnoœci
+\item Kinect -- czujnik ruchu produkowany przed firmê Microsoft
+\item SDK -- Software development kit, zestaw narzêdzi umo¿liwiaj¹cy pisanie aplikacji na dany sprzêt/system -- tu urz¹dzenie Kinect
 \end{itemize}
 
 \chapter{Implementacja}
@@ -61,14 +95,14 @@ Do spe³nienia za³o¿eñ projektu, interfejs powinien mieæ funkcje:\
 Ze wzglêdu na brak przetwarzania sygna³ów dŸwiêkowych, interfejs nie bêdzie potrzebowa³ funkcji do obs³ugi dŸwiêków. 
 Co jest w innych interfejsach, a tu jest nadmiarowe; co siê nie zmieœci lub jest niepotrzebne
 \section{Projekt wykonania interfejsu}
-tekst
+projekt wykonania interfejsu
 \section{Implementacja oprogramowania}
 Zrzuty okienek, wizualizacja
 \section{Testy}
 test test test test
 
 \chapter{Uwagi koñcowe}
-om nom nom nom
+uwagi koñcowe
 
 \listoffigures
 \listoftables
@@ -81,6 +115,11 @@ om nom nom nom
   \emph{Jêzyk C++. Kompedium wiedzy},
   wyd. Helion, Gliwice
   2014.
+
+\bibitem{kinekt}
+  MSDN (Microsoft Developer Network),
+  \emph{Dokumentacja techniczna czujnika Kinect},
+  https://msdn.microsoft.com/en-us/library/hh855347.aspx
 
 \bibitem{art-zppp}
   Rafa³ Rudzik,
